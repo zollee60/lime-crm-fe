@@ -21,8 +21,8 @@ const ImageTile: React.FC<ImageTileProps> = ({ imgData }) => {
     return(
         <div className="w-72 h-72 md:w-64 md:h-64 bg-cover bg-center cursor-pointer relative rounded shadow-4xl hover:shadow-base" style={{backgroundImage: `url(${imgData.url})`}}>
             <div className="w-100 h-100 bg-black bg-opacity-60 absolute rounded inset-0 opacity-0 hover:opacity-100 backdrop-filter backdrop-blur-sm transition duration-300 ease-in-out">
-                <div className="w-full h-full top-32 left-32 px-3 pt-1 absolute transform -translate-x-1/2 -translate-y-1/2">
-                    <h2 className="text-lime text-lg font-bold">{imgData.originalName}</h2>
+                <div className="w-full h-full top-36 left-36 md:top-32 md:left-32 px-3 pt-1 absolute transform -translate-x-1/2 -translate-y-1/2">
+                    <h2 className="text-lime text-lg font-bold w-4/5 truncate">{imgData.originalName}</h2>
                     <table className="w-100">
                         <tr>
                             <td className="text-sm text-lime w-2/5">size:</td>
@@ -42,12 +42,12 @@ const ImageTile: React.FC<ImageTileProps> = ({ imgData }) => {
                         </tr>
                     </table>
                     <h3 className="text-sm text-lime mt-2">Description</h3>
-                    <div className="md:h-24">
+                    <div className="h-24">
                         <p className="text-xs text-white overflow-hidden overflow-ellipsis h-full">{imgData.description}</p>
                     </div>
                     
                 </div>
-                <div className="absolute left-52 top-3 hover:border-2 hover:border-lime focus:border-lime-dark focus:text-lime-dark">
+                <div className="absolute left-60 md:left-52 top-3 hover:border-2 hover:border-lime focus:border-lime-dark focus:text-lime-dark">
                     <input type="image" src={link} alt="Copy link" title="Copy link to clipboard" onClick={handleCopyUrlToClipboard}/>
                 </div>
             </div>
